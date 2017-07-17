@@ -1,0 +1,119 @@
+{
+  "name": "vscode-github-notifications-bell",
+  "displayName": "GitHub Notifications Bell",
+  "description": "A secure, customizable, statusbar bell that notifies you about notifications on github.",
+  "icon": "resources/logo-128x128.png",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "out/src/extension.js",
+  "publisher": "fabiospampinato",
+  "activationEvents": [
+    "*"
+  ],
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "GitHub Notifications Bell - Configuration",
+      "properties": {
+        "githubNotificationsBell.refreshInterval": {
+          "type": "number",
+          "description": "Amount of seconds to wait before each refresh",
+          "default": 60
+        },
+        "githubNotificationsBell.oauthToken": {
+          "type": "string",
+          "description": "OAuth token used for requesting the notifications",
+          "default": ""
+        },
+        "githubNotificationsBell.alignment": {
+          "type": "string",
+          "description": "Bell's position in the statusbar (left/right)",
+          "default": "right"
+        },
+        "githubNotificationsBell.color": {
+          "type": "string",
+          "description": "Bell's color when there are some notifications",
+          "default": ""
+        },
+        "githubNotificationsBell.hideIfNone": {
+          "type": "boolean",
+          "description": "Hide the bell if there are no notifications",
+          "default": true
+        },
+        "githubNotificationsBell.colorNone": {
+          "type": "string",
+          "description": "Bell's color when there aren't any notifications",
+          "default": "#AAAAAA"
+        },
+        "githubNotificationsBell.hideIfNotParticipating": {
+          "type": "boolean",
+          "description": "Hide the bell if there are no notifications you are participating in",
+          "default": false
+        },
+        "githubNotificationsBell.colorParticipating": {
+          "type": "string",
+          "description": "Bell's color when there are some notifications you are participating in",
+          "default": "#FFCC00"
+        },
+        "githubNotificationsBell.openInBrowser": {
+          "type": "string",
+          "description": "Name of the app to use when opening in the browser",
+          "default": ""
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "githubNotificationsBell.refresh",
+        "title": "GitHub Notifications: Refresh"
+      },
+      {
+        "command": "githubNotificationsBell.openInBrowser",
+        "title": "GitHub Notifications: Open in browser"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "tsc -p ./",
+    "compile": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test"
+  },
+  "bugs": {
+    "url": "https://github.com/fabiospampinato/vscode-github-notifications-bell/issues"
+  },
+  "author": {
+    "name": "Fabio Spampinato",
+    "email": "spampinabio@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fabiospampinato/vscode-github-notifications-bell.git"
+  },
+  "engines": {
+    "vscode": "^1.10.0"
+  },
+  "keywords": [
+    "vscode",
+    "vsc",
+    "extension",
+    "github",
+    "notifications"
+  ],
+  "categories": [
+    "Other"
+  ],
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "mkdirp": "^0.5.1",
+    "open": "0.0.5",
+    "pify": "^3.0.0",
+    "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "@types/node": "^6.0.40",
+    "tslint": "^4.4.2",
+    "typescript": "~2.2.0",
+    "vscode": "^1.1.4"
+  }
+}
