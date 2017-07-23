@@ -98,7 +98,11 @@ const Utils = {
 
     open ( folderpath, inNewWindow? ) {
 
-      vscode.commands.executeCommand ( 'vscode.openFolder', vscode.Uri.parse ( `file://${folderpath}` ), inNewWindow );
+      folderpath = path.normalize ( folderpath );
+
+      const folderuri = vscode.Uri.file ( folderpath );
+
+      vscode.commands.executeCommand ( 'vscode.openFolder', folderuri, inNewWindow );
 
     },
 
