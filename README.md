@@ -24,7 +24,7 @@ It adds 2 command to the command palette:
 
 ```js
 'GitHub Notifications: Refresh' // Refreshes the notifications counters
-'GitHub Notifications: Open in browser' // Open the notifications page in the browser
+'GitHub Notifications: Open in Browser' // Open the notifications page in the browser
 ```
 
 ## Settings
