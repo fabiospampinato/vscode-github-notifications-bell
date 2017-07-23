@@ -47,6 +47,8 @@ class Statusbar {
 
     setTimeout ( this.update.bind ( this ), this.config.refreshInterval * 1000 );
 
+    return true;
+
   }
 
   async updateVariables () {

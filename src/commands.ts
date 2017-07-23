@@ -1,15 +1,19 @@
 
 /* IMPORT */
 
+import * as _ from 'lodash';
 import * as open from 'open';
+import * as vscode from 'vscode';
 import Config from './config';
 import statusbar from './statusbar';
 
 /* COMMANDS */
 
-function refresh () {
+async function refresh () {
 
-  statusbar.update ();
+  const result = await statusbar.update ();
+
+  if ( result === true ) vscode.window.showInformationMessage ( `GitHub Notifications refreshed. ${statusbar.allNr} Notifications - ${statusbar.mineNr} Participating.` );
 
 }
 
