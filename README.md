@@ -41,7 +41,7 @@ This extension requires you to provide an OAuth token, to create it go [here](ht
   "githubNotificationsBell.colorNone": "#888888", // Bell's color when there aren't any notifications
   "githubNotificationsBell.hideIfNotParticipating": false, // Hide the bell if there are no notifications you are participating in
   "githubNotificationsBell.colorParticipating": "#FFCC00", // Bell's color when there are some notifications you are participating in
-  "githubNotificationsBell.openInBrowser": "" // The browser to use when opening on the browser
+  "githubNotificationsBell.openInBrowser": "" // The browser to use when opening in the browser
 }
 ```
 

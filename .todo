@@ -1,2 +1,3 @@
 
 ☐ Don't request the data multiple times if we have multiple workspaces
+☐ Cache result, so that we don't hit the API rate limit
