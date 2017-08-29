@@ -1,4 +1,4 @@
-### Version 1.0.4
+### Version 1.0.5
 - Updated readme
 
 ### Version 1.0.3

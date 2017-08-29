@@ -23,7 +23,7 @@ ext install vscode-github-notifications-bell
 It adds 2 command to the command palette:
 
 ```js
-'GitHub Notifications: Refresh' // Refreshes the notifications counters
+'GitHub Notifications: Refresh' // Refresh the notifications counters
 'GitHub Notifications: Open in Browser' // Open the notifications page in the browser
 ```
 
