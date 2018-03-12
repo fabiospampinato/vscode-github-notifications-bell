@@ -8,7 +8,7 @@ A secure, customizable, statusbar bell that notifies you about notifications on 
 
 It automatically opens the "Participating" section of your notifications if you have any of those.
 
-You can customize it to your likings, choose when to show it, which colors to use, and which browser to use.
+You can customize it to your likings, choose when to show it, which icon to use, which colors to use, and which browser to use.
 
 ## Install
 
@@ -36,6 +36,7 @@ This extension requires you to provide an OAuth token, to create it go [here](ht
   "githubNotificationsBell.refreshInterval": 300, // Amount of seconds to wait before each refresh
   "githubNotificationsBell.oauthToken": "", // OAuth token used for requesting the notifications
   "githubNotificationsBell.alignment": "right", // Bell's position in the statusbar (left/right)
+  "githubNotificationsBell.icon": "bell", // The icon to use in the statusbar
   "githubNotificationsBell.color": "", // Bell's color when there are some notifications
   "githubNotificationsBell.hideIfNone": true, // Hide the bell if there are no notifications
   "githubNotificationsBell.colorNone": "#888888", // Bell's color when there aren't any notifications
@@ -48,6 +49,11 @@ This extension requires you to provide an OAuth token, to create it go [here](ht
 ## Demo
 
 ![Demo](resources/demo.png)
+
+## Hints:
+
+- **Icon**: You might want to put `"githubNotificationsBell.icon": "mark-github"` in your settings, in order to distinguish this extension with the notification center included in VSC v1.21.0. [Here](https://octicons.github.com/) you can browse a list of supported icons. If for instance you click the first icon, you'll get a page with `.octicon-alert` written in it, to get the string to use simply remove the `.octicon-` part, so in this case the icon name would be `alert`.
+
 
 ## License
 

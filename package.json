@@ -30,6 +30,11 @@
           "description": "Bell's position in the statusbar (left/right)",
           "default": "right"
         },
+        "githubNotificationsBell.icon": {
+          "type": "string",
+          "description": "The icon to use in the statusbar",
+          "default": "bell"
+        },
         "githubNotificationsBell.color": {
           "type": "string",
           "description": "Bell's color when there are some notifications",

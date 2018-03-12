@@ -29,7 +29,7 @@ class Statusbar {
           alignment = config.alignment === 'left' ? vscode.StatusBarAlignment.Left : vscode.StatusBarAlignment.Right;
 
     this.bell = vscode.window.createStatusBarItem ( alignment, -Infinity );
-    this.bell.text = '$(bell)';
+    this.bell.text = `$(${config.icon})`;
     this.bell.command = 'githubNotificationsBell.openInBrowser';
 
   }
