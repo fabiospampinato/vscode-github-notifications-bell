@@ -1,3 +1,7 @@
+### Version 1.1.0
+- Increased default refresh interval to 300s
+- Added support for changing the icon
+
 ### Version 1.0.5
 - Updated readme
 
