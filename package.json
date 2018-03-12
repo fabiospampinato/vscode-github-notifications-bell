@@ -18,7 +18,7 @@
         "githubNotificationsBell.refreshInterval": {
           "type": "number",
           "description": "Amount of seconds to wait before each refresh",
-          "default": 60
+          "default": 300
         },
         "githubNotificationsBell.oauthToken": {
           "type": "string",
