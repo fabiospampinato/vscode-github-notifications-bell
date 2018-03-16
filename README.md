@@ -1,4 +1,4 @@
-# VSC GitHub Notifications Bell
+# GitHub Notifications Bell
 
 <p align="center">
 	<img src="https://raw.githubusercontent.com/fabiospampinato/vscode-github-notifications-bell/master/resources/logo-128x128.png" alt="Logo">
@@ -12,10 +12,10 @@ You can customize it to your likings, choose when to show it, which icon to use,
 
 ## Install
 
-Run the following in the command palette:
+Follow the instructions in the [Marketplace](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-github-notifications-bell), or run the following in the command palette:
 
 ```shell
-ext install vscode-github-notifications-bell
+ext install fabiospampinato.vscode-github-notifications-bell
 ```
 
 ## Usage
