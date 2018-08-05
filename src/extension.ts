@@ -7,8 +7,9 @@ import Utils from './utils';
 
 /* ACTIVATE */
 
-async function activate ( context: vscode.ExtensionContext ) {
+function activate ( context: vscode.ExtensionContext ) {
 
+  Utils.state = context.globalState;
   Utils.initCommands ( context );
 
   return statusbar.init ();

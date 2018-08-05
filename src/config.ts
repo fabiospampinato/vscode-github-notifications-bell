@@ -7,17 +7,9 @@ import * as vscode from 'vscode';
 
 const Config = {
 
-  getExtension ( extension = 'githubNotificationsBell' ) {
+  get ( extension = 'githubNotificationsBell' ) {
 
-    const config = vscode.workspace.getConfiguration ().get ( extension );
-
-    return config as any;
-
-  },
-
-  async get () {
-
-    return Config.getExtension ();
+    return vscode.workspace.getConfiguration ().get ( extension ) as any;
 
   }
 

@@ -2,16 +2,14 @@
 /* IMPORT */
 
 import * as _ from 'lodash';
-import * as fs from 'fs';
-import * as mkdirp from 'mkdirp';
-import * as path from 'path';
-import * as pify from 'pify';
 import * as vscode from 'vscode';
 import * as Commands from './commands';
 
 /* UTILS */
 
 const Utils = {
+
+  state: <vscode.Memento> null,
 
   initCommands ( context: vscode.ExtensionContext ) {
 

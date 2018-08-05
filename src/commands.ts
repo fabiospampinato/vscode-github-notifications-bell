@@ -1,27 +1,27 @@
 
 /* IMPORT */
 
-import * as _ from 'lodash';
 import * as open from 'open';
 import * as vscode from 'vscode';
 import Config from './config';
+import Utils from './utils';
 import statusbar from './statusbar';
 
 /* COMMANDS */
 
 async function refresh () {
 
-  const result = await statusbar.update ();
+  await statusbar.update ( true );
 
-  if ( result === true ) vscode.window.showInformationMessage ( `GitHub Notifications refreshed. ${statusbar.allNr} Notifications - ${statusbar.mineNr} Participating.` );
+  vscode.window.showInformationMessage ( `GitHub Notifications refreshed. ${Utils.state.get ( 'all', 0 )} Notifications - ${Utils.state.get ( 'participating', 0 )} Participating.` );
 
 }
 
-async function openInBrowser () {
+function openInBrowser () {
 
-  const config = await Config.get (),
+  const config = Config.get (),
         browser = config.openInBrowser || undefined,
-        url = statusbar.mineNr
+        url = Utils.state.get ( 'participating', 0 )
                 ? 'https://github.com/notifications/participating'
                 : 'https://github.com/notifications';
 

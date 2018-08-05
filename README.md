@@ -20,7 +20,7 @@ ext install fabiospampinato.vscode-github-notifications-bell
 
 ## Usage
 
-It adds 2 command to the command palette:
+It adds 2 commands to the command palette:
 
 ```js
 'GitHub Notifications: Refresh' // Refresh the notifications counters
@@ -38,10 +38,10 @@ This extension requires you to provide an OAuth token, to create it go [here](ht
   "githubNotificationsBell.alignment": "right", // Bell's position in the statusbar (left/right)
   "githubNotificationsBell.icon": "bell", // The icon to use in the statusbar
   "githubNotificationsBell.color": "", // Bell's color when there are some notifications
-  "githubNotificationsBell.hideIfNone": true, // Hide the bell if there are no notifications
   "githubNotificationsBell.colorNone": "#888888", // Bell's color when there aren't any notifications
-  "githubNotificationsBell.hideIfNotParticipating": false, // Hide the bell if there are no notifications you are participating in
   "githubNotificationsBell.colorParticipating": "#FFCC00", // Bell's color when there are some notifications you are participating in
+  "githubNotificationsBell.hideIfNone": true, // Hide the bell if there are no notifications
+  "githubNotificationsBell.hideIfNotParticipating": false, // Hide the bell if there are no notifications you are participating in
   "githubNotificationsBell.openInBrowser": "" // The browser to use when opening in the browser
 }
 ```

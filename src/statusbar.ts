@@ -5,12 +5,13 @@ import * as pify from 'pify';
 import * as request from 'request';
 import * as vscode from 'vscode';
 import Config from './config';
+import Utils from './utils';
 
 /* STATUSBAR */
 
 class Statusbar {
 
-  bell; config; allNr = 0; mineNr = 0;
+  bell; config; all = 0; participating = 0;
 
   async init () {
 
@@ -20,11 +21,13 @@ class Statusbar {
 
     vscode.workspace.onDidChangeConfiguration ( this.update.bind ( this ) );
 
+    setInterval ( this.update.bind ( this ), 30000 );
+
   }
 
-  async initBell () {
+  initBell () {
 
-    const config = await Config.get (),
+    const config = Config.get (),
           alignment = config.alignment === 'left' ? vscode.StatusBarAlignment.Left : vscode.StatusBarAlignment.Right;
 
     this.bell = vscode.window.createStatusBarItem ( alignment, -Infinity );
@@ -33,41 +36,46 @@ class Statusbar {
 
   }
 
-  async update () {
+  async update ( force? ) {
 
-    this.config = await Config.get ();
+    this.config = Config.get ();
 
     if ( !this.config.oauthToken ) return vscode.window.showErrorMessage ( 'You need to provide an OAuth token via the "githubNotificationsBell.oauthToken" setting' );
 
-    await this.updateVariables ();
+    await this.updateState ( force );
     this.updateColor ();
     this.updateTooltip ();
     this.updateVisibility ();
 
-    setTimeout ( this.update.bind ( this ), this.config.refreshInterval * 1000 );
-
-    return true;
-
   }
 
-  async updateVariables () {
+  async updateState ( force? ) {
 
-    try {
+    if ( force || ( Date.now () - Utils.state.get ( 'date', 0 ) ) >= ( this.config.refreshInterval * 1000 ) ) { // Refresh
 
-      const headers = {
-        Authorization: `token ${this.config.oauthToken}`,
-        'User-Agent': 'vscode-github-notifications-bell'
-      };
+      await Utils.state.update ( 'date', Date.now () );
 
-      const result = await Promise.all ([
-        pify ( request )({ url: 'https://api.github.com/notifications', headers }),
-        pify ( request )({ url: 'https://api.github.com/notifications?participating=1', headers })
-      ]);
+      try {
 
-      this.allNr = JSON.parse ( result[0].body ).length;
-      this.mineNr = JSON.parse ( result[1].body ).length;
+        const headers = {
+          Authorization: `token ${this.config.oauthToken}`,
+          'User-Agent': 'vscode-github-notifications-bell'
+        };
 
-    } catch ( e ) {}
+        const result = await Promise.all ([
+          pify ( request )({ url: 'https://api.github.com/notifications', headers }),
+          pify ( request )({ url: 'https://api.github.com/notifications?participating=1', headers })
+        ]);
+
+        await Utils.state.update ( 'all', JSON.parse ( result[0].body ).length );
+        await Utils.state.update ( 'participating', JSON.parse ( result[1].body ).length );
+
+      } catch ( e ) {}
+
+    }
+
+    this.all = Utils.state.get ( 'all', 0 );
+    this.participating = Utils.state.get ( 'participating', 0 );
 
   }
 
@@ -75,8 +83,8 @@ class Statusbar {
 
     const {color, colorNone, colorParticipating} = this.config;
 
-    this.bell.color = this.allNr
-                        ? this.mineNr
+    this.bell.color = this.all
+                        ? this.participating
                           ? colorParticipating
                           : color
                         : colorNone;
@@ -85,15 +93,15 @@ class Statusbar {
 
   updateTooltip () {
 
-    this.bell.tooltip = `${this.allNr} Notifications - ${this.mineNr} Participating`;
+    this.bell.tooltip = `${this.all} Notifications - ${this.participating} Participating`;
 
   }
 
   updateVisibility () {
 
     const {hideIfNone, hideIfNotParticipating} = this.config;
-    const isVisible = this.allNr
-                        ? this.mineNr
+    const isVisible = this.all
+                        ? this.participating
                           ? true
                           : !hideIfNotParticipating
                         : !hideIfNone;

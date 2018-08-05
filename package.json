@@ -40,25 +40,25 @@
           "description": "Bell's color when there are some notifications",
           "default": ""
         },
-        "githubNotificationsBell.hideIfNone": {
-          "type": "boolean",
-          "description": "Hide the bell if there are no notifications",
-          "default": true
-        },
         "githubNotificationsBell.colorNone": {
           "type": "string",
           "description": "Bell's color when there aren't any notifications",
           "default": "#AAAAAA"
         },
-        "githubNotificationsBell.hideIfNotParticipating": {
-          "type": "boolean",
-          "description": "Hide the bell if there are no notifications you are participating in",
-          "default": false
-        },
         "githubNotificationsBell.colorParticipating": {
           "type": "string",
           "description": "Bell's color when there are some notifications you are participating in",
           "default": "#FFCC00"
+        },
+        "githubNotificationsBell.hideIfNone": {
+          "type": "boolean",
+          "description": "Hide the bell if there are no notifications",
+          "default": true
+        },
+        "githubNotificationsBell.hideIfNotParticipating": {
+          "type": "boolean",
+          "description": "Hide the bell if there are no notifications you are participating in",
+          "default": false
         },
         "githubNotificationsBell.openInBrowser": {
           "type": "string",
