@@ -1,3 +1,7 @@
+### Version 1.2.0
+- Removed some unused code
+- Using the global state in order to reduce API usage
+
 ### Version 1.1.1
 - Updated readme
 
