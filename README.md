@@ -50,7 +50,7 @@ This extension requires you to provide an OAuth token, to create it go [here](ht
 
 ![Demo](resources/demo.png)
 
-## Hints:
+## Hints
 
 - **Icon**: You might want to put `"githubNotificationsBell.icon": "mark-github"` in your settings, in order to distinguish this extension with the notification center included in VSC v1.21.0. [Here](https://octicons.github.com/) you can browse a list of supported icons. If for instance you click the first icon, you'll get a page with `.octicon-alert` written in it, to get the string to use simply remove the `.octicon-` part, so in this case the icon name would be `alert`.
 
