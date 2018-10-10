@@ -1,3 +1,6 @@
+### Version 1.2.1
+- Bundling with webpack
+
 ### Version 1.2.0
 - Removed some unused code
 - Using the global state in order to reduce API usage
