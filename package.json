@@ -40,25 +40,15 @@
           "description": "Bell's color when there are some notifications",
           "default": ""
         },
-        "githubNotificationsBell.colorNone": {
-          "type": "string",
-          "description": "Bell's color when there aren't any notifications",
-          "default": "#AAAAAA"
-        },
-        "githubNotificationsBell.colorParticipating": {
-          "type": "string",
-          "description": "Bell's color when there are some notifications you are participating in",
-          "default": "#FFCC00"
-        },
         "githubNotificationsBell.hideIfNone": {
           "type": "boolean",
           "description": "Hide the bell if there are no notifications",
           "default": true
         },
-        "githubNotificationsBell.hideIfNotParticipating": {
+        "githubNotificationsBell.showNumberOfNotifications": {
           "type": "boolean",
-          "description": "Hide the bell if there are no notifications you are participating in",
-          "default": false
+          "description": "Show the number of notifications alongside the bell icon",
+          "default": true
         },
         "githubNotificationsBell.openInBrowser": {
           "type": "string",
@@ -97,7 +87,7 @@
     "url": "https://github.com/fabiospampinato/vscode-github-notifications-bell.git"
   },
   "engines": {
-    "vscode": "^1.10.0"
+    "vscode": "^1.13.0"
   },
   "keywords": [
     "vscode",
@@ -122,6 +112,7 @@
     "tslint": "^4.4.2",
     "typescript": "~2.4.1",
     "vscode": "^1.1.4",
-    "webpack": "^4.20.2"
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
   }
 }
