@@ -11,7 +11,7 @@ import Utils from './utils';
 
 class Statusbar {
 
-  bell; config; all = 0; participating = 0;
+  bell; config; all = 0;
 
   async init () {
 
@@ -43,6 +43,7 @@ class Statusbar {
     if ( !this.config.oauthToken ) return vscode.window.showErrorMessage ( 'You need to provide an OAuth token via the "githubNotificationsBell.oauthToken" setting' );
 
     await this.updateState ( force );
+    this.updateText ();
     this.updateColor ();
     this.updateTooltip ();
     this.updateVisibility ();
@@ -63,48 +64,47 @@ class Statusbar {
         };
 
         const result = await Promise.all ([
-          pify ( request )({ url: 'https://api.github.com/notifications', headers }),
-          pify ( request )({ url: 'https://api.github.com/notifications?participating=1', headers })
+          pify ( request )({ url: 'https://api.github.com/notifications', headers })
         ]);
 
         await Utils.state.update ( 'all', JSON.parse ( result[0].body ).length );
-        await Utils.state.update ( 'participating', JSON.parse ( result[1].body ).length );
 
       } catch ( e ) {}
 
     }
 
     this.all = Utils.state.get ( 'all', 0 );
-    this.participating = Utils.state.get ( 'participating', 0 );
+
+  }
+
+  updateText () {
+
+    this.bell.text = this.all
+      ? `$(${this.config.icon}) ${this.all}`
+      : `$(${this.config.icon})`;
 
   }
 
   updateColor () {
 
-    const {color, colorNone, colorParticipating} = this.config;
+    const {color} = this.config;
 
     this.bell.color = this.all
-                        ? this.participating
-                          ? colorParticipating
-                          : color
-                        : colorNone;
+      ? color
+      : new vscode.ThemeColor('statusBar.foreground');
 
   }
 
   updateTooltip () {
 
-    this.bell.tooltip = `${this.all} Notifications - ${this.participating} Participating`;
+    this.bell.tooltip = `${this.all} Notifications`;
 
   }
 
   updateVisibility () {
 
-    const {hideIfNone, hideIfNotParticipating} = this.config;
-    const isVisible = this.all
-                        ? this.participating
-                          ? true
-                          : !hideIfNotParticipating
-                        : !hideIfNone;
+    const {hideIfNone} = this.config;
+    const isVisible = this.all || !hideIfNone;
 
     this.bell[isVisible ? 'show' : 'hide']();
 
