@@ -1,3 +1,7 @@
+### Version 2.0.0
+- Removed special support for "participating" notifications
+- Added a counter
+
 ### Version 1.2.1
 - Bundling with webpack
 
