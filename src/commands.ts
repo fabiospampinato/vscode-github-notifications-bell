@@ -9,11 +9,13 @@ import statusbar from './statusbar';
 
 /* COMMANDS */
 
-async function refresh () {
+async function refresh ( silence? ) {
 
   await statusbar.update ( true );
 
-  vscode.window.showInformationMessage ( `GitHub Notifications refreshed. ${Utils.state.get ( 'all', 0 )} Notifications.` );
+  if ( !silence ) {
+    vscode.window.showInformationMessage ( `GitHub Notifications refreshed. ${Utils.state.get ( 'all', 0 )} Notifications.` );
+  }
 
 }
 
@@ -24,6 +26,8 @@ function openInBrowser () {
         url = 'https://github.com/notifications';
 
   open ( url, browser );
+
+  Utils.state.update ( 'didOpenInBrowser', true );
 
 }
 

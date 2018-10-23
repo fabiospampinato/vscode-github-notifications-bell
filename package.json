@@ -87,7 +87,7 @@
     "url": "https://github.com/fabiospampinato/vscode-github-notifications-bell.git"
   },
   "engines": {
-    "vscode": "^1.13.0"
+    "vscode": "^1.17.0"
   },
   "keywords": [
     "vscode",
