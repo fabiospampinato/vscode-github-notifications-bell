@@ -9,11 +9,11 @@ import statusbar from './statusbar';
 
 /* COMMANDS */
 
-async function refresh ( silence? ) {
+async function refresh ( showNotification = true ) {
 
   await statusbar.update ( true );
 
-  if ( !silence ) {
+  if ( showNotification ) {
     vscode.window.showInformationMessage ( `GitHub Notifications refreshed. ${Utils.state.get ( 'all', 0 )} Notifications.` );
   }
 

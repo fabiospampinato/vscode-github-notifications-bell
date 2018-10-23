@@ -4,6 +4,7 @@
 import * as vscode from 'vscode';
 import statusbar from './statusbar';
 import Utils from './utils';
+import { refresh } from './commands';
 
 /* ACTIVATE */
 
@@ -22,7 +23,7 @@ function onDidChangeWindowState ( event ) {
 
   if (event.focused && Utils.state.get ( 'didOpenInBrowser', false ) ) {
     
-    vscode.commands.executeCommand ( 'githubNotificationsBell.refresh', true );
+    refresh ( false );
 
     Utils.state.update ( 'didOpenInBrowser', false );
 
