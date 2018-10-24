@@ -21,11 +21,11 @@ function activate ( context: vscode.ExtensionContext ) {
 
 function onDidChangeWindowState ( event ) {
 
-  if (event.focused && Utils.state.get ( 'didOpenInBrowser', false ) ) {
-    
-    refresh ( false );
+  if ( event.focused && Utils.state.get ( 'didOpenInBrowser', false ) ) {
 
     Utils.state.update ( 'didOpenInBrowser', false );
+
+    refresh ( false );
 
   }
 

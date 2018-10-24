@@ -79,9 +79,7 @@ class Statusbar {
 
   updateText () {
 
-    this.bell.text = this.all
-      ? `$(${this.config.icon}) ${this.all}`
-      : `$(${this.config.icon})`;
+    this.bell.text = this.all ? `$(${this.config.icon}) ${this.all}` : `$(${this.config.icon})`;
 
   }
 
@@ -89,9 +87,7 @@ class Statusbar {
 
     const {color} = this.config;
 
-    this.bell.color = this.all
-      ? color
-      : new vscode.ThemeColor('statusBar.foreground');
+    this.bell.color = this.all ? color : '';
 
   }
 
