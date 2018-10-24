@@ -1,3 +1,7 @@
+### Version 2.1.1
+- Using the `mark-github` icon by default
+- Updated readme
+
 ### Version 2.1.0
 - Refresh when focused after opening in browser
 
