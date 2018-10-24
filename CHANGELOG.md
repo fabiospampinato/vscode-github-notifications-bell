@@ -1,3 +1,6 @@
+### Version 2.1.0
+- Refresh when focused after opening in browser
+
 ### Version 2.0.0
 - Removed special support for "participating" notifications
 - Added a counter
