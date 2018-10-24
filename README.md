@@ -36,7 +36,7 @@ This extension requires you to provide an OAuth token, to create it go [here](ht
   "githubNotificationsBell.refreshInterval": 300, // Amount of seconds to wait before each refresh
   "githubNotificationsBell.oauthToken": "", // OAuth token used for requesting the notifications
   "githubNotificationsBell.alignment": "right", // Bell's position in the statusbar (left/right)
-  "githubNotificationsBell.icon": "bell", // The icon to use in the statusbar
+  "githubNotificationsBell.icon": "mark-github", // The icon to use in the statusbar
   "githubNotificationsBell.color": "", // Bell's color when there are some notifications
   "githubNotificationsBell.colorNone": "#888888", // Bell's color when there aren't any notifications
   "githubNotificationsBell.colorParticipating": "#FFCC00", // Bell's color when there are some notifications you are participating in

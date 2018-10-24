@@ -33,7 +33,7 @@
         "githubNotificationsBell.icon": {
           "type": "string",
           "description": "The icon to use in the statusbar",
-          "default": "bell"
+          "default": "mark-github"
         },
         "githubNotificationsBell.color": {
           "type": "string",
