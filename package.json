@@ -1,7 +1,7 @@
 {
   "name": "vscode-github-notifications-bell",
-  "displayName": "GitHub Notifications Bell",
-  "description": "A secure, customizable, statusbar bell that notifies you about notifications on github.",
+  "displayName": "GitHub Notifications",
+  "description": "A secure, customizable, statusbar icon that notifies you about notifications on GitHub.",
   "icon": "resources/logo-128x128.png",
   "version": "2.1.0",
   "license": "MIT",

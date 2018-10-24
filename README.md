@@ -1,14 +1,12 @@
-# GitHub Notifications Bell
+# GitHub Notifications
 
 <p align="center">
 	<img src="https://raw.githubusercontent.com/fabiospampinato/vscode-github-notifications-bell/master/resources/logo-128x128.png" alt="Logo">
 </p>
 
-A secure, customizable, statusbar bell that notifies you about notifications on github.
+A secure, customizable, statusbar icon that notifies you about notifications on GitHub.
 
-It automatically opens the "Participating" section of your notifications if you have any of those.
-
-You can customize it to your likings, choose when to show it, which icon to use, which colors to use, and which browser to use.
+You can customize it to your likings, choose when to show it and which icon/color/browser to use.
 
 ## Install
 
@@ -23,7 +21,7 @@ ext install fabiospampinato.vscode-github-notifications-bell
 It adds 2 commands to the command palette:
 
 ```js
-'GitHub Notifications: Refresh' // Refresh the notifications counters
+'GitHub Notifications: Refresh' // Refresh the notifications
 'GitHub Notifications: Open in Browser' // Open the notifications page in the browser
 ```
 
@@ -38,10 +36,8 @@ This extension requires you to provide an OAuth token, to create it go [here](ht
   "githubNotificationsBell.alignment": "right", // Bell's position in the statusbar (left/right)
   "githubNotificationsBell.icon": "mark-github", // The icon to use in the statusbar
   "githubNotificationsBell.color": "", // Bell's color when there are some notifications
-  "githubNotificationsBell.colorNone": "#888888", // Bell's color when there aren't any notifications
-  "githubNotificationsBell.colorParticipating": "#FFCC00", // Bell's color when there are some notifications you are participating in
   "githubNotificationsBell.hideIfNone": true, // Hide the bell if there are no notifications
-  "githubNotificationsBell.hideIfNotParticipating": false, // Hide the bell if there are no notifications you are participating in
+  "githubNotificationsBell.showNumberOfNotifications": true, // Show the number of notifications alongside the bell icon
   "githubNotificationsBell.openInBrowser": "" // The browser to use when opening in the browser
 }
 ```
@@ -52,8 +48,7 @@ This extension requires you to provide an OAuth token, to create it go [here](ht
 
 ## Hints
 
-- **Icon**: You might want to put `"githubNotificationsBell.icon": "mark-github"` in your settings, in order to distinguish this extension with the notification center included in VSC v1.21.0. [Here](https://octicons.github.com/) you can browse a list of supported icons. If for instance you click the first icon, you'll get a page with `.octicon-alert` written in it, to get the string to use simply remove the `.octicon-` part, so in this case the icon name would be `alert`.
-
+- **Icon**: [Here](https://octicons.github.com/) you can browse a list of supported icons. If for instance you click the first icon, you'll get a page with `.octicon-alert` written in it, to get the string to use simply remove the `.octicon-` part, so in this case the icon name would be `alert`.
 
 ## License
 
