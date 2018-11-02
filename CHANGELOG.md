@@ -1,3 +1,7 @@
+### Version 2.1.2
+- Outputting modern code (es2017, faster)
+- Using "Debug Launcher" for debugging
+
 ### Version 2.1.1
 - Using the `mark-github` icon by default
 - Updated readme
