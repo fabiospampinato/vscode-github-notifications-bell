@@ -1,7 +1,7 @@
 # GitHub Notifications
 
 <p align="center">
-	<img src="https://raw.githubusercontent.com/fabiospampinato/vscode-github-notifications-bell/master/resources/logo-128x128.png" alt="Logo">
+	<img src="https://raw.githubusercontent.com/fabiospampinato/vscode-github-notifications-bell/master/resources/logo.png" width="128" alt="Logo">
 </p>
 
 A secure, customizable, statusbar icon that notifies you about notifications on GitHub.
