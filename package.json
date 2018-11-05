@@ -49,11 +49,6 @@
           "type": "boolean",
           "description": "Show the number of notifications alongside the bell icon",
           "default": true
-        },
-        "githubNotificationsBell.openInBrowser": {
-          "type": "string",
-          "description": "Name of the app to use when opening in the browser",
-          "default": ""
         }
       }
     },
@@ -102,7 +97,6 @@
   "dependencies": {
     "lodash": "^4.17.4",
     "mkdirp": "^0.5.1",
-    "open": "0.0.5",
     "pify": "^3.0.0",
     "request": "^2.81.0"
   },
