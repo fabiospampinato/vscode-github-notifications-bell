@@ -1,3 +1,6 @@
+### Version 2.1.4
+- Replaced `open` with `vscode.open`
+
 ### Version 2.1.3
 - Readme: using hi-res logo
 
