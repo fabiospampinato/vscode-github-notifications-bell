@@ -37,8 +37,7 @@ This extension requires you to provide an OAuth token, to create it go [here](ht
   "githubNotificationsBell.icon": "mark-github", // The icon to use in the statusbar
   "githubNotificationsBell.color": "", // Bell's color when there are some notifications
   "githubNotificationsBell.hideIfNone": true, // Hide the bell if there are no notifications
-  "githubNotificationsBell.showNumberOfNotifications": true, // Show the number of notifications alongside the bell icon
-  "githubNotificationsBell.openInBrowser": "" // The browser to use when opening in the browser
+  "githubNotificationsBell.showNumberOfNotifications": true // Show the number of notifications alongside the bell icon
 }
 ```
 

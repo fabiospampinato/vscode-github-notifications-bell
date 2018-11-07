@@ -1,7 +1,6 @@
 
 /* IMPORT */
 
-import * as open from 'open';
 import * as vscode from 'vscode';
 import Config from './config';
 import Utils from './utils';
@@ -23,11 +22,9 @@ async function refresh ( showNotification = true ) {
 
 function openInBrowser () {
 
-  const config = Config.get (),
-        browser = config.openInBrowser || undefined,
-        url = 'https://github.com/notifications';
+  const url = 'https://github.com/notifications';
 
-  open ( url, browser );
+  vscode.commands.executeCommand ( 'vscode.open', vscode.Uri.parse ( url ) );
 
   Utils.state.update ( 'didOpenInBrowser', true );
 
