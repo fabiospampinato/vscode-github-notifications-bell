@@ -95,13 +95,13 @@
     "Other"
   ],
   "dependencies": {
+    "@types/node": "^10.12.8",
     "lodash": "^4.17.4",
     "mkdirp": "^0.5.1",
     "pify": "^3.0.0",
     "request": "^2.81.0"
   },
   "devDependencies": {
-    "@types/node": "^6.0.40",
     "ts-loader": "^5.2.1",
     "typescript": "~2.4.1",
     "vscode": "^1.1.4",
