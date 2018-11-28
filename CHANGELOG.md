@@ -1,3 +1,6 @@
+### Version 2.1.5
+- Improved `alignment` setting definition
+
 ### Version 2.1.4
 - Replaced `open` with `vscode.open`
 
