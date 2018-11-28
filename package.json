@@ -28,7 +28,11 @@
         "githubNotificationsBell.alignment": {
           "type": "string",
           "description": "Bell's position in the statusbar (left/right)",
-          "default": "right"
+          "default": "right",
+          "enum": [
+            "left",
+            "right"
+          ]
         },
         "githubNotificationsBell.icon": {
           "type": "string",
