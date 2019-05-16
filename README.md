@@ -29,6 +29,9 @@ It adds 2 commands to the command palette:
 
 This extension requires you to provide an OAuth token, to create it go [here](https://github.com/settings/tokens), click "Generate new token" and be sure to select the "notifications" scope, then click "Generate token".
 
+- **Environment variables**: the following environment variables are supported too: `GITHUB_NOTIFICATIONS_TOKEN`.
+
+
 ```js
 {
   "githubNotificationsBell.refreshInterval": 300, // Amount of seconds to wait before each refresh

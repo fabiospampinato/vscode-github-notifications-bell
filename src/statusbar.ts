@@ -11,7 +11,7 @@ import Utils from './utils';
 
 class Statusbar {
 
-  bell; config; all = 0;
+  bell; config; oauthToken; all = 0;
 
   async init () {
 
@@ -28,7 +28,8 @@ class Statusbar {
   initBell () {
 
     const config = Config.get (),
-          alignment = config.alignment === 'left' ? vscode.StatusBarAlignment.Left : vscode.StatusBarAlignment.Right;
+      alignment = config.alignment === 'left' ? vscode.StatusBarAlignment.Left : vscode.StatusBarAlignment.Right;
+    this.oauthToken = config.oauthToken || process.env.GITHUB_NOTIFICATIONS_TOKEN;
 
     this.bell = vscode.window.createStatusBarItem ( alignment, -Infinity );
     this.bell.text = `$(${config.icon})`;
@@ -40,7 +41,9 @@ class Statusbar {
 
     this.config = Config.get ();
 
-    if ( !this.config.oauthToken ) return vscode.window.showErrorMessage ( 'You need to provide an OAuth token via the "githubNotificationsBell.oauthToken" setting' );
+    if ( !this.oauthToken ) {
+      return vscode.window.showErrorMessage ( 'You need to provide an OAuth token via the "githubNotificationsBell.oauthToken" setting' );
+    }
 
     await this.updateState ( force );
     this.updateText ();
@@ -59,7 +62,7 @@ class Statusbar {
       try {
 
         const headers = {
-          Authorization: `token ${this.config.oauthToken}`,
+          Authorization: `token ${this.oauthToken}`,
           'User-Agent': 'vscode-github-notifications-bell'
         };
 
