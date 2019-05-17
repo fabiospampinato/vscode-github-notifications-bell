@@ -30,6 +30,7 @@ It adds 2 commands to the command palette:
 This extension requires you to provide an OAuth token, to create it go [here](https://github.com/settings/tokens), click "Generate new token" and be sure to select the "notifications" scope, then click "Generate token".
 
 - **Environment variables**: the following environment variables are supported too: `GITHUB_NOTIFICATIONS_TOKEN`.
+  - you can set the environment variable in your shell config file `export GITHUB_NOTIFICATIONS_TOKEN='your_token_here'` or before you start VS Code, if you're starting it from terminal: `GITHUB_NOTIFICATIONS_TOKEN='your_token_here' code`
 
 
 ```js
