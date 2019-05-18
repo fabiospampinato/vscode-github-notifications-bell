@@ -1,3 +1,6 @@
+### Version 2.2.0
+- Added support for the "GITHUB_NOTIFICATIONS_TOKEN" environment variable
+
 ### Version 2.1.5
 - Improved `alignment` setting definition
 
