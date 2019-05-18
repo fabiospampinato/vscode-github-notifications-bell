@@ -41,6 +41,8 @@ This extension requires you to provide an OAuth token, to create it go [here](ht
 }
 ```
 
+You can provide your OAuth token also by setting an environment variable named: `GITHUB_NOTIFICATIONS_TOKEN`.
+
 ## Demo
 
 ![Demo](resources/demo.png)
