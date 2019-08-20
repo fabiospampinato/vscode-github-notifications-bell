@@ -3,7 +3,7 @@
   "displayName": "GitHub Notifications",
   "description": "A secure, customizable, statusbar icon that notifies you about notifications on GitHub.",
   "icon": "resources/logo-128x128.png",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "license": "MIT",
   "main": "out/extension.js",
   "publisher": "fabiospampinato",
@@ -53,6 +53,11 @@
           "type": "boolean",
           "description": "Show the number of notifications alongside the bell icon",
           "default": true
+        },
+        "githubNotificationsBell.baseUrl": {
+          "type": "string",
+          "description": "The Github URL to query against. Github Enterprise may use a non-standard url",
+          "default": "https://github.com"
         }
       }
     },

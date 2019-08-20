@@ -22,7 +22,9 @@ async function refresh ( showNotification = true ) {
 
 function openInBrowser () {
 
-  const url = 'https://github.com/notifications';
+  const config = Config.get ();
+
+  const url = `${config.baseUrl}/notifications`;
 
   vscode.commands.executeCommand ( 'vscode.open', vscode.Uri.parse ( url ) );
 
