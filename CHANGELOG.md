@@ -1,3 +1,6 @@
+### Version 2.3.0
+- Added support for using a custom GitHub domain
+
 ### Version 2.2.0
 - Added support for the "GITHUB_NOTIFICATIONS_TOKEN" environment variable
 
