@@ -78,8 +78,10 @@ class Statusbar {
           'User-Agent': 'vscode-github-notifications-bell'
         };
 
+        const { domain } = this.config;
+
         const result = await Promise.all ([
-          pify ( request )({ url: 'https://api.github.com/notifications', headers })
+          pify ( request )({ url: `https://${domain}/notifications`, headers })
         ]);
 
         await Utils.state.update ( 'all', JSON.parse ( result[0].body ).length );
