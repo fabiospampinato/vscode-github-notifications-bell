@@ -54,10 +54,10 @@
           "description": "Show the number of notifications alongside the bell icon",
           "default": true
         },
-        "githubNotificationsBell.baseUrl": {
+        "githubNotificationsBell.domain": {
           "type": "string",
-          "description": "The Github URL to query against. Github Enterprise may use a non-standard url",
-          "default": "https://github.com"
+          "description": "The Github domain to query against. Github Enterprise may use a different domain",
+          "default": "github.com"
         }
       }
     },

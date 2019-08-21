@@ -24,7 +24,7 @@ function openInBrowser () {
 
   const config = Config.get ();
 
-  const url = `${config.baseUrl}/notifications`;
+  const url = `https://${config.domain}/notifications`;
 
   vscode.commands.executeCommand ( 'vscode.open', vscode.Uri.parse ( url ) );
 

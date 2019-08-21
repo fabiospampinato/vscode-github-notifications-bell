@@ -38,7 +38,7 @@ This extension requires you to provide an OAuth token, to create it go [here](ht
   "githubNotificationsBell.color": "", // Bell's color when there are some notifications
   "githubNotificationsBell.hideIfNone": true, // Hide the bell if there are no notifications
   "githubNotificationsBell.showNumberOfNotifications": true // Show the number of notifications alongside the bell icon
-  "githubNotificationsBell.baseUrl": "https://github.com" // The Github URL to query against. Github Enterprise may use a non-standard url
+  "githubNotificationsBell.domain": "github.com" // The Github domain to query against. Github Enterprise may use a different domain
 }
 ```
 
