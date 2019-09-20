@@ -57,7 +57,7 @@
         "githubNotificationsBell.domain": {
           "type": "string",
           "description": "The Github domain to query against. Github Enterprise may use a different domain",
-          "default": "github.com"
+          "default": "api.github.com"
         }
       }
     },
