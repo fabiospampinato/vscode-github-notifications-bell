@@ -81,7 +81,7 @@ class Statusbar {
         const { domain } = this.config;
 
         const result = await Promise.all ([
-          pify ( request )({ url: `https://${domain}/notifications`, headers })
+          pify ( request )({ url: `https://api.${domain}/notifications`, headers })
         ]);
 
         await Utils.state.update ( 'all', JSON.parse ( result[0].body ).length );
