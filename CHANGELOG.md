@@ -1,3 +1,6 @@
+### Version 2.3.1
+- Fixed a regression when querying GitHub's API
+
 ### Version 2.3.0
 - Added support for using a custom GitHub domain
 
