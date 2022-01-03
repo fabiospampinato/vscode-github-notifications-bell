@@ -14,13 +14,15 @@
     "configuration": {
       "type": "object",
       "title": "GitHub Notifications Bell - Configuration",
-      "properties": {
+      "properties": 
         "githubNotificationsBell.refreshInterval": {
           "type": "number",
           "description": "Amount of seconds to wait before each refresh",
           "default": 300
+
         },
-        "githubNotificationsBell.oauthToken": {
+        "githubNotificationsBell.oauthToken": {vscode://vscode.github-authentication/did-authenticate?windowid=1&code=2b22091cc2a96a299aab&state=8eb814cd-3eb0-41be-a089-99297c3127b6
+
           "type": "string",
           "description": "OAuth token used for requesting the notifications",
           "default": ""
