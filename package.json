@@ -25,7 +25,7 @@
 
           "type": "string",
           "description": "OAuth token used for requesting the notifications",
-          "default": ""
+          "default": "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"
         },
         "githubNotificationsBell.alignment": {
           "type": "string",
