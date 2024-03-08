@@ -4,6 +4,11 @@
 import Context from './context';
 import {getOptions} from './utils';
 
+/* HELPERS */
+
+const KEY_COUNTER = 'githubNotificationsBell.counter';
+const KEY_DATE = 'githubNotificationsBell.date';
+
 /* MAIN */
 
 const State = {
@@ -12,25 +17,25 @@ const State = {
 
   getCounter: (): number => {
 
-    return Context.store?.get ( 'counter', 0 ) || 0;
+    return Context.store?.get ( KEY_COUNTER, 0 ) || 0;
 
   },
 
   setCounter: ( counter: number ): void => {
 
-    Context.store?.update ( 'counter', counter );
+    Context.store?.update ( KEY_COUNTER, counter );
 
   },
 
   getDate: (): number => {
 
-    return Context.store?.get ( 'date', 0 ) || 0;
+    return Context.store?.get ( KEY_DATE, 0 ) || 0;
 
   },
 
   setDate: ( date: number ): void => {
 
-    Context.store?.update ( 'date', date );
+    Context.store?.update ( KEY_DATE, date );
 
   },
 
