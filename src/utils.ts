@@ -1,36 +1,62 @@
 
 /* IMPORT */
 
-import * as _ from 'lodash';
-import * as vscode from 'vscode';
-import * as Commands from './commands';
+import {getConfig} from 'vscode-extras';
+import type {Options} from './types';
 
-/* UTILS */
+/* MAIN */
 
-const Utils = {
+const getOptions = (): Options => {
 
-  state: <vscode.Memento> null,
+  //TODO: this.config.oauthToken || process.env.GITHUB_NOTIFICATIONS_TOKEN;
+  //TODO: if ( !this.token ) return vscode.window.showErrorMessage ( 'You need to provide an OAuth token either via the "githubNotificationsBell.oauthToken" setting or the "GITHUB_NOTIFICATIONS_TOKEN" environment variable' );
 
-  initCommands ( context: vscode.ExtensionContext ) {
+  const config = getConfig ( 'githubNotificationsBell' );
+  const refreshInterval = isNumber ( config?.refreshInterval ) ? config.refreshInterval : 300;
+  const token = isString ( config?.token ) ? config.token : undefined;
+  const alignment = isString ( config?.alignment ) ? config.alignment : 'right';
+  const icon = isString ( config?.icon ) ? config.icon : 'mark-github';
+  const color = isString ( config?.color ) ? config.color : '';
+  const hideIfNone = isBoolean ( config?.hideIfNone ) ? config.hideIfNone : true;
+  const showNumberOfNotifications = isBoolean ( config?.showNumberOfNotifications ) ? config.showNumberOfNotifications : true;
+  const protocol = isString ( config?.protocol ) ? config.protocol : 'https';
+  const domain = isString ( config?.domain ) ? config.domain : 'github.com';
 
-    const {commands} = vscode.extensions.getExtension ( 'fabiospampinato.vscode-github-notifications-bell' ).packageJSON.contributes;
+  return {refreshInterval, token, alignment, icon, color, hideIfNone, showNumberOfNotifications, protocol, domain};
 
-    commands.forEach ( ({ command, title }) => {
+};
 
-      const commandName = _.last ( command.split ( '.' ) ) as string,
-            handler = Commands[commandName],
-            disposable = vscode.commands.registerCommand ( command, () => handler () );
+const isBoolean = ( value: unknown ): value is boolean => {
 
-      context.subscriptions.push ( disposable );
+  return typeof value === 'boolean';
 
-    });
+};
 
-    return Commands;
+const isNumber = ( value: unknown ): value is number => {
 
-  }
+  return typeof value === 'number';
+
+};
+
+const isString = ( value: unknown ): value is string => {
+
+  return typeof value === 'string';
+
+};
+
+const once = <T> ( fn: () => T ): (() => T) => {
+
+  let inited = false;
+  let result: T;
+
+  return (): T => {
+
+    return result = ( inited ? result : fn () );
+
+  };
 
 };
 
 /* EXPORT */
 
-export default Utils;
+export {getOptions, isBoolean, isNumber, isString, once};

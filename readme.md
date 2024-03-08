@@ -6,7 +6,7 @@
 
 A secure, customizable, statusbar icon that notifies you about notifications on GitHub.
 
-You can customize it to your likings, choose when to show it and which icon/color/browser to use.
+You can customize it to your likings, choosing when to show it and which icon/color/label to use.
 
 ## Install
 
@@ -38,25 +38,16 @@ This extension requires you to provide an OAuth token, to create it go [here](ht
   "githubNotificationsBell.color": "", // Bell's color when there are some notifications
   "githubNotificationsBell.hideIfNone": true, // Hide the bell if there are no notifications
   "githubNotificationsBell.showNumberOfNotifications": true // Show the number of notifications alongside the bell icon
+  "githubNotificationsBell.protocol": "https" // The protocol to use when quering GitHub
   "githubNotificationsBell.domain": "github.com" // The Github domain to query against. Github Enterprise may use a different domain
 }
 ```
 
 You can provide your OAuth token also by setting an environment variable named: `GITHUB_NOTIFICATIONS_TOKEN`.
 
-## Demo
-
-![Demo](resources/demo.png)
-
 ## Hints
 
-- **Icon**: [Here](https://octicons.github.com/) you can browse a list of supported icons. If for instance you click the first icon, you'll get a page with `.octicon-alert` written in it, to get the string to use simply remove the `.octicon-` part, so in this case the icon name would be `alert`.
-
-## Contributing
-
-If you found a problem, or have a feature request, please open an [issue](https://github.com/fabiospampinato/vscode-github-notifications-bell/issues) about it.
-
-If you want to make a pull request you can debug the extension using [Debug Launcher](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-debug-launcher).
+- **Icon**: [Here](https://code.visualstudio.com/api/references/icons-in-labels#icon-listing) you can browse a list of supported icons.
 
 ## License
 

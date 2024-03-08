@@ -1,37 +1,42 @@
 
 /* IMPORT */
 
-import * as vscode from 'vscode';
-import Config from './config';
-import Utils from './utils';
-import statusbar from './statusbar';
+import vscode from 'vscode';
+import Context from './context';
+import State from './state';
+import Statusbar from './statusbar';
+import {getOptions} from './utils';
 
-/* COMMANDS */
+/* MAIN */
 
-async function refresh ( showNotification = true ) {
+const openInBrowser = (): void => {
 
-  await statusbar.update ( true );
+  const options = getOptions ();
+  const url = `${options.protocol}://${options.domain}/notifications`;
+
+  vscode.env.openExternal ( vscode.Uri.parse ( url ) );
+
+};
+
+const refresh = async ( showNotification: boolean = true ): Promise<void> => {
+
+  await update ( true );
 
   if ( showNotification ) {
 
-    vscode.window.showInformationMessage ( `GitHub Notifications refreshed. ${Utils.state.get ( 'all', 0 )} Notifications.` );
+    vscode.window.showInformationMessage ( `GitHub Notifications refreshed. ${State.getCounter ()} Notifications.` );
 
   }
 
-}
+};
 
-function openInBrowser () {
+const update = async ( force?: boolean ): Promise<void> => {
 
-  const config = Config.get ();
+  await State.refresh ( force );
+  await Statusbar.refresh ( Context.statusbar );
 
-  const url = `https://${config.domain}/notifications`;
-
-  vscode.commands.executeCommand ( 'vscode.open', vscode.Uri.parse ( url ) );
-
-  Utils.state.update ( 'didOpenInBrowser', true );
-
-}
+};
 
 /* EXPORT */
 
-export {openInBrowser, refresh};
+export {openInBrowser, refresh, update};
