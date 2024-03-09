@@ -7,7 +7,9 @@ import Statusbar from './statusbar';
 /* MAIN */
 
 const Context = {
-  store: <vscode.Memento | null> null,
+  token: <string | undefined> undefined,
+  secrets: <vscode.SecretStorage | undefined> undefined,
+  store: <vscode.Memento | undefined> undefined,
   statusbar: <vscode.StatusBarItem> Statusbar.create ()
 };
 

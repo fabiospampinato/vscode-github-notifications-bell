@@ -3,6 +3,7 @@
 
 import vscode from 'vscode';
 import Context from './context';
+import Secrets from './secrets';
 import State from './state';
 import Statusbar from './statusbar';
 import {getOptions} from './utils';
@@ -30,6 +31,12 @@ const refresh = async ( showNotification: boolean = true ): Promise<void> => {
 
 };
 
+const setToken = async (): Promise<void> => {
+
+  await Secrets.updateToken ();
+
+};
+
 const update = async ( force?: boolean ): Promise<void> => {
 
   await State.refresh ( force );
@@ -39,4 +46,4 @@ const update = async ( force?: boolean ): Promise<void> => {
 
 /* EXPORT */
 
-export {openInBrowser, refresh, update};
+export {openInBrowser, refresh, setToken, update};

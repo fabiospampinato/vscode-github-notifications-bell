@@ -2,6 +2,7 @@
 /* IMPORT */
 
 import vscode from 'vscode';
+import Context from './context';
 import State from './state';
 import {getOptions, once} from './utils';
 
@@ -25,12 +26,13 @@ const Statusbar = {
   refresh: ( item: vscode.StatusBarItem ): void => {
 
     const options = getOptions ();
+    const enabled = !!Context.token;
     const counter = State.getCounter ();
-    const visible = counter || !options.hideIfNone;
+    const visible = !enabled || counter || !options.hideIfNone;
 
-    item.command = 'githubNotificationsBell.openInBrowser';
+    item.command = enabled ? 'githubNotificationsBell.openInBrowser' : 'githubNotificationsBell.setToken';
     item.text = `$(${options.icon})${counter && options.showNumberOfNotifications ? ` ${counter}` : ''}`;
-    item.color = options.color;
+    item.color = enabled ? options.color : '#ff2200';
     item.tooltip = `${counter} Notifications`;
     item[visible ? 'show' : 'hide']();
 

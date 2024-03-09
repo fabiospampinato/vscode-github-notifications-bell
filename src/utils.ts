@@ -8,12 +8,8 @@ import type {Options} from './types';
 
 const getOptions = (): Options => {
 
-  //TODO: this.config.oauthToken || process.env.GITHUB_NOTIFICATIONS_TOKEN;
-  //TODO: if ( !this.token ) return vscode.window.showErrorMessage ( 'You need to provide an OAuth token either via the "githubNotificationsBell.oauthToken" setting or the "GITHUB_NOTIFICATIONS_TOKEN" environment variable' );
-
   const config = getConfig ( 'githubNotificationsBell' );
   const refreshInterval = isNumber ( config?.refreshInterval ) ? config.refreshInterval : 300;
-  const token = isString ( config?.token ) ? config.token : undefined;
   const alignment = isString ( config?.alignment ) ? config.alignment : 'right';
   const icon = isString ( config?.icon ) ? config.icon : 'mark-github';
   const color = isString ( config?.color ) ? config.color : '';
@@ -22,7 +18,7 @@ const getOptions = (): Options => {
   const protocol = isString ( config?.protocol ) ? config.protocol : 'https';
   const domain = isString ( config?.domain ) ? config.domain : 'github.com';
 
-  return {refreshInterval, token, alignment, icon, color, hideIfNone, showNumberOfNotifications, protocol, domain};
+  return {refreshInterval, alignment, icon, color, hideIfNone, showNumberOfNotifications, protocol, domain};
 
 };
 

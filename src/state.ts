@@ -45,8 +45,10 @@ const State = {
 
       const options = getOptions ();
 
+      if ( !Context.token ) return 0;
+
       const headers = {
-        'Authorization': `token ${options.token}`,
+        'Authorization': `token ${Context.token}`,
         'User-Agent': 'vscode-github-notifications-bell'
       };
 

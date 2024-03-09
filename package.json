@@ -20,11 +20,6 @@
           "description": "Amount of seconds to wait before each refresh",
           "default": 300
         },
-        "githubNotificationsBell.oauthToken": {
-          "type": "string",
-          "description": "OAuth token used for requesting the notifications",
-          "default": ""
-        },
         "githubNotificationsBell.alignment": {
           "type": "string",
           "description": "Bell's position in the statusbar (left/right)",
@@ -68,12 +63,16 @@
     },
     "commands": [
       {
+        "command": "githubNotificationsBell.openInBrowser",
+        "title": "GitHub Notifications: Open in Browser"
+      },
+      {
         "command": "githubNotificationsBell.refresh",
         "title": "GitHub Notifications: Refresh"
       },
       {
-        "command": "githubNotificationsBell.openInBrowser",
-        "title": "GitHub Notifications: Open in Browser"
+        "command": "githubNotificationsBell.setToken",
+        "title": "GitHub Notifications: Set Personal Access Token"
       }
     ]
   },

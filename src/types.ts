@@ -3,7 +3,6 @@
 
 type Options = {
   refreshInterval: number,
-  token?: string,
   alignment: string,
   icon: string,
   color: string,

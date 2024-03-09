@@ -18,21 +18,25 @@ ext install fabiospampinato.vscode-github-notifications-bell
 
 ## Usage
 
-It adds 2 commands to the command palette:
+It adds 3 commands to the command palette:
 
 ```js
-'GitHub Notifications: Refresh' // Refresh the notifications
 'GitHub Notifications: Open in Browser' // Open the notifications page in the browser
+'GitHub Notifications: Refresh' // Refresh the notifications
+'GitHub Notifications: Set Personal Access Token' // Set the personal access token
 ```
 
-## Settings
+## Secrets
 
-This extension requires you to provide an OAuth token, to create it go [here](https://github.com/settings/tokens), click "Generate new token" and be sure to select the "notifications" scope, then click "Generate token".
+This extension needs a GitHub Personal Access Token, to create it go [here](https://github.com/settings/tokens), click "Generate new token" and be sure to select the "notifications" scope, then click "Generate token".
+
+To tell the extension about your token you should run the `GitHub Notifications: Set Personal Access Token` from the command palette.
+
+## Settings
 
 ```js
 {
   "githubNotificationsBell.refreshInterval": 300, // Amount of seconds to wait before each refresh
-  "githubNotificationsBell.oauthToken": "", // OAuth token used for requesting the notifications
   "githubNotificationsBell.alignment": "right", // Bell's position in the statusbar (left/right)
   "githubNotificationsBell.icon": "mark-github", // The icon to use in the statusbar
   "githubNotificationsBell.color": "", // Bell's color when there are some notifications
@@ -42,8 +46,6 @@ This extension requires you to provide an OAuth token, to create it go [here](ht
   "githubNotificationsBell.domain": "github.com" // The Github domain to query against. Github Enterprise may use a different domain
 }
 ```
-
-You can provide your OAuth token also by setting an environment variable named: `GITHUB_NOTIFICATIONS_TOKEN`.
 
 ## Hints
 
