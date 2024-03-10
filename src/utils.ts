@@ -47,7 +47,10 @@ const once = <T> ( fn: () => T ): (() => T) => {
 
   return (): T => {
 
-    return result = ( inited ? result : fn () );
+    result = ( inited ? result : fn () );
+    inited = true;
+
+    return result;
 
   };
 
