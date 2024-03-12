@@ -102,13 +102,13 @@
     "notifications"
   ],
   "dependencies": {
-    "vscode-extras": "^1.2.0"
+    "vscode-extras": "^1.6.1"
   },
   "devDependencies": {
     "@types/vscode": "^1.87.0",
     "esbuild": "0.20.1",
     "scex": "^1.1.0",
     "tsex": "^3.2.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.4.2"
   }
 }

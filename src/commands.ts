@@ -1,7 +1,7 @@
 
 /* IMPORT */
 
-import vscode from 'vscode';
+import {alert, openInExternal} from 'vscode-extras';
 import Context from './context';
 import Secrets from './secrets';
 import State from './state';
@@ -15,7 +15,7 @@ const openInBrowser = (): void => {
   const options = getOptions ();
   const url = `${options.protocol}://${options.domain}/notifications`;
 
-  vscode.env.openExternal ( vscode.Uri.parse ( url ) );
+  openInExternal ( url );
 
 };
 
@@ -25,7 +25,7 @@ const refresh = async ( showNotification: boolean = true ): Promise<void> => {
 
   if ( showNotification ) {
 
-    vscode.window.showInformationMessage ( `GitHub Notifications refreshed. ${State.getCounter ()} Notifications.` );
+    alert.info ( `GitHub Notifications refreshed. ${State.getCounter ()} Notifications.` );
 
   }
 

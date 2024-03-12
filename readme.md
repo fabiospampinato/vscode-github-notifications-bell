@@ -49,7 +49,7 @@ To tell the extension about your token you should run the `GitHub Notifications:
 
 ## Hints
 
-- **Icon**: [Here](https://code.visualstudio.com/api/references/icons-in-labels#icon-listing) you can browse a list of supported icons.
+- **Icon**: [here](https://code.visualstudio.com/api/references/icons-in-labels#icon-listing) you can browse a list of supported icons.
 
 ## License
 

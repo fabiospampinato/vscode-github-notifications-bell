@@ -1,7 +1,7 @@
 
 /* IMPORT */
 
-import vscode from 'vscode';
+import {prompt} from 'vscode-extras';
 import Context from './context';
 
 /* MAIN */
@@ -42,10 +42,7 @@ const Secrets = {
 
   updateToken: async (): Promise<void> => {
 
-    const token = await vscode.window.showInputBox ({
-      title: 'GitHub Notifications - Personal Access Token',
-      password: true
-    });
+    const token = await prompt.password ( 'GitHub Notifications - Personal Access Token' );
 
     if ( !token ) return;
 
