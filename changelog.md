@@ -1,3 +1,6 @@
+### Version 3.0.1
+- Minor internal improvements
+
 ### Version 3.0.0
 - Rewitten: more modern code, no third-party dependencies, 99.5% smaller bundle
 - New command: "githubNotificationsBell.setToken", replacing the less secure setting for setting the personal access token
