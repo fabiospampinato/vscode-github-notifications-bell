@@ -1,3 +1,6 @@
+### Version 3.0.2
+- Delaying activation until the editor has started up, for slightly faster startup
+
 ### Version 3.0.1
 - Minor internal improvements
 
