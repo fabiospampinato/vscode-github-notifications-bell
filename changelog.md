@@ -5,7 +5,7 @@
 - Minor internal improvements
 
 ### Version 3.0.0
-- Rewitten: more modern code, no third-party dependencies, 99.5% smaller bundle
+- Rewritten: more modern code, no third-party dependencies, 99.5% smaller bundle
 - New command: "githubNotificationsBell.setToken", replacing the less secure setting for setting the personal access token
 - New setting: "githubNotificationsBell.protocol", for setting a custom protocol to use when quering GitHub
 - Added support for pagination, useful for people with more than 50 notifications
