@@ -42,7 +42,7 @@ To tell the extension about your token you should run the `GitHub Notifications:
   "githubNotificationsBell.color": "", // Bell's color when there are some notifications
   "githubNotificationsBell.hideIfNone": true, // Hide the bell if there are no notifications
   "githubNotificationsBell.showNumberOfNotifications": true // Show the number of notifications alongside the bell icon
-  "githubNotificationsBell.protocol": "https" // The protocol to use when quering GitHub
+  "githubNotificationsBell.protocol": "https" // The protocol to use when querying GitHub
   "githubNotificationsBell.domain": "github.com" // The Github domain to query against. Github Enterprise may use a different domain
 }
 ```
