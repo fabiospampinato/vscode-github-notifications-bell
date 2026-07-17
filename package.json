@@ -51,7 +51,7 @@
         },
         "githubNotificationsBell.protocol": {
           "type": "string",
-          "description": "The protocol to use when quering GitHub",
+          "description": "The protocol to use when querying GitHub",
           "default": "https"
         },
         "githubNotificationsBell.domain": {
